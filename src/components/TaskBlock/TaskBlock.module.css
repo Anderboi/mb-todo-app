@@ -1,0 +1,13 @@
+.block {
+    padding: 1em;
+    border-bottom: 1px solid lightgrey;
+    background-color: white;
+    display: flex;
+}
+.text {
+    font-weight: bold;
+    margin-left: 1.5em;
+}
+
+.checkbox {
+}
