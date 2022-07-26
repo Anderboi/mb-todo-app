@@ -2,7 +2,6 @@ import React from "react";
 import style from "./TaskBlock.module.css";
 import { ITask } from "./TaskBlock.props";
 import cn from "classnames";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const TaskBlock = ({
     taskName,
@@ -12,16 +11,16 @@ export const TaskBlock = ({
     ...props
 }: ITask): JSX.Element => {
     return (
-        <div className={style.block} {...props}>
+        <div className={style.block} {...props} role='taskBlock'>
             <input
                 type="checkbox"
                 className={style.checkbox}
-                // name="task"
-                // id="task"
                 checked={isDone}
                 onChange={() => toggle!(taskId)}
-            />
+                data-testId='input'
+                />
             <span
+                role='checker'
                 className={cn(style.text, {
                     [style.checked]: isDone,
                 })}

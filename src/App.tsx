@@ -1,3 +1,5 @@
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, FC, useEffect, useState } from "react";
 import "./App.css";
 import { TaskBlock } from "./components";
@@ -88,6 +90,10 @@ const App: FC = (): JSX.Element => {
             <h1 className="header">todos</h1>
             <div className="todoList">
                 <form action="todo" onSubmit={addTask}>
+                    <FontAwesomeIcon
+                        icon={faAngleDown}
+                        className="input__icon"
+                    />
                     <input
                         type="text"
                         name="todo"
@@ -97,6 +103,7 @@ const App: FC = (): JSX.Element => {
                         onChange={handleChange}
                         value={task}
                         autoFocus
+                        data-testid="input"
                     />
                 </form>
 
