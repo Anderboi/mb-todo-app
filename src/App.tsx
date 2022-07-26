@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 import "./App.css";
 import { TaskBlock } from "./components";
 import { ITask } from "./components/TaskBlock/TaskBlock.props";
@@ -6,6 +6,7 @@ import { ITask } from "./components/TaskBlock/TaskBlock.props";
 const App: FC = (): JSX.Element => {
     const [task, setTask] = useState<string>("");
     const [todoList, setTodoList] = useState<Array<ITask>>([]);
+    const [filteredList, setFilteredList] = useState<Array<ITask>>(todoList);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         setTask(event.target.value);
@@ -37,7 +38,40 @@ const App: FC = (): JSX.Element => {
         );
     };
 
-    const todoListElements = todoList.map((task: ITask, key: number) => {
+    const filterTodoList = (status: "all" | "undone" | "done") => {
+        switch (status) {
+            case "all":
+                setFilteredList(todoList);
+                break;
+            case "done":
+                let newFilteredList = [...todoList].filter(
+                    (item) => item.isDone
+                );
+                setFilteredList(newFilteredList);
+                break;
+            case "undone":
+                let newFilteredListFalse = [...todoList].filter(
+                    (item) => item.isDone === false
+                );
+                setFilteredList(newFilteredListFalse);
+                break;
+            default:
+                break;
+        }
+    };
+
+    const clearCompletedList = () => {
+        let clearedList = todoList.filter(
+            (task: ITask) => task.isDone === false
+        );
+        setTodoList(clearedList);
+    };
+
+    useEffect(() => {
+        setFilteredList(todoList);
+    }, [todoList]);
+
+    const todoListElements = filteredList.map((task: ITask, key: number) => {
         return (
             <TaskBlock
                 key={key}
@@ -62,6 +96,7 @@ const App: FC = (): JSX.Element => {
                         placeholder="What needs to be done?"
                         onChange={handleChange}
                         value={task}
+                        autoFocus
                     />
                 </form>
 
@@ -69,11 +104,28 @@ const App: FC = (): JSX.Element => {
                 <div className="footer">
                     <span>{`${todoList.length} items left`}</span>
                     <div className="filterBlock">
-                        <button className="button">All</button>
-                        <button className="button">Active</button>
-                        <button className="button">Completed</button>
+                        <button
+                            className="button"
+                            onClick={() => filterTodoList("all")}
+                        >
+                            All
+                        </button>
+                        <button
+                            className="button"
+                            onClick={() => filterTodoList("undone")}
+                        >
+                            Active
+                        </button>
+                        <button
+                            className="button"
+                            onClick={() => filterTodoList("done")}
+                        >
+                            Completed
+                        </button>
                     </div>
-                    <button className="button">Clear completed</button>
+                    <button className="button" onClick={clearCompletedList}>
+                        Clear completed
+                    </button>
                 </div>
             </div>
         </div>

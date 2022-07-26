@@ -1,7 +1,8 @@
 import React from "react";
-import { Checkbox } from "../Checkbox/Checkbox";
 import style from "./TaskBlock.module.css";
 import { ITask } from "./TaskBlock.props";
+import cn from "classnames";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const TaskBlock = ({
     taskName,
@@ -12,15 +13,21 @@ export const TaskBlock = ({
 }: ITask): JSX.Element => {
     return (
         <div className={style.block} {...props}>
-            {/* <Checkbox isChecked={isDone} /> */}
             <input
                 type="checkbox"
-                name="task"
-                id="task"
+                className={style.checkbox}
+                // name="task"
+                // id="task"
                 checked={isDone}
                 onChange={() => toggle!(taskId)}
             />
-            <span className={style.text}>{taskName}</span>
+            <span
+                className={cn(style.text, {
+                    [style.checked]: isDone,
+                })}
+            >
+                {taskName}
+            </span>
         </div>
     );
 };

@@ -5,9 +5,48 @@
     display: flex;
 }
 .text {
-    font-weight: bold;
     margin-left: 1.5em;
 }
 
+.checked {
+    text-decoration: line-through;
+    color: lightgrey;
+}
+
 .checkbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox::before {
+    position: absolute;
+    content: "";
+    height: 1.625em;
+    width: 1.625em;
+    border: 1px solid lightgrey;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transition: 0.3s all ease;
+}
+
+.checkbox:checked::before {
+    border: 1px solid #77c0af;
+}
+
+.checkbox::after{
+    content: '';
+    display: block;
+
+}
+
+.checkbox:checked::after {
+ width: 4px;
+  height: 9px;
+  margin: 0px 4px;
+  border-bottom: 2px solid #77c0af;
+  border-right: 2px solid #77c0af;
+  transform: rotate(45deg);
 }
