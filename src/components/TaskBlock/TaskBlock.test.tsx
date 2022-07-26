@@ -15,13 +15,10 @@ describe("Task block functions tests", () => {
             />
         );
 
-        const divElement = screen.getByRole("taskBlock");
+        const divElement = screen.getByTestId("taskBlock");
         expect(divElement).toHaveTextContent("Test task");
 
-        const checkerElement = screen.getByRole("checker");
-        expect(checkerElement).toBeInTheDocument();
         userEvent.click(screen.getByTestId("input"));
         expect(onClick).toHaveBeenCalledTimes(1);
-        // expect(checkerElement).toHaveClass("checked");
     });
 });

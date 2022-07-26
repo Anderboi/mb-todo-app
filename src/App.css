@@ -22,27 +22,6 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 }
 
-.todoList__input {
-    box-sizing: border-box;
-    width: 100%;
-    border: none;
-    padding: 1em;
-    padding-left: 4.5em;
-    border-bottom: 1px solid lightgrey;
-}
-
-.todoList__input::placeholder {
-    font-style: italic;
-    color: lightgray;
-}
-
-.input__icon {
-    position: absolute;
-    color: lightgrey;
-    top: 0.75em;
-    left: 1.3em;
-}
-
 .footer {
     display: flex;
     justify-content: space-between;
@@ -63,13 +42,7 @@
     padding: 0.25em;
 }
 
-.button {
-    background: none;
-    border: none;
-    font-size: 0.625rem;
-    color: #878787;
-    cursor: pointer;
-}
+
 
 
 

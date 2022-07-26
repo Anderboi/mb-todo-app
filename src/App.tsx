@@ -1,8 +1,6 @@
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, FC, useEffect, useState } from "react";
 import "./App.css";
-import { TaskBlock } from "./components";
+import { Button, Input, TaskBlock } from "./components";
 import { ITask } from "./components/TaskBlock/TaskBlock.props";
 
 const App: FC = (): JSX.Element => {
@@ -89,50 +87,30 @@ const App: FC = (): JSX.Element => {
         <div className="App">
             <h1 className="header">todos</h1>
             <div className="todoList">
-                <form action="todo" onSubmit={addTask}>
-                    <FontAwesomeIcon
-                        icon={faAngleDown}
-                        className="input__icon"
-                    />
-                    <input
-                        type="text"
-                        name="todo"
-                        id="todo"
-                        className="todoList__input"
-                        placeholder="What needs to be done?"
-                        onChange={handleChange}
-                        value={task}
-                        autoFocus
-                        data-testid="input"
-                    />
-                </form>
-
+                <Input
+                    onChange={handleChange}
+                    // handleOnChange={handleChange}
+                    handleSubmit={addTask}
+                    placeholder="What needs to be done?"
+                    value={task}
+                />
                 {todoListElements}
                 <div className="footer">
                     <span>{`${todoList.length} items left`}</span>
                     <div className="filterBlock">
-                        <button
-                            className="button"
-                            onClick={() => filterTodoList("all")}
-                        >
+                        <Button onClick={() => filterTodoList("all")}>
                             All
-                        </button>
-                        <button
-                            className="button"
-                            onClick={() => filterTodoList("undone")}
-                        >
+                        </Button>
+                        <Button onClick={() => filterTodoList("undone")}>
                             Active
-                        </button>
-                        <button
-                            className="button"
-                            onClick={() => filterTodoList("done")}
-                        >
+                        </Button>
+                        <Button onClick={() => filterTodoList("done")}>
                             Completed
-                        </button>
+                        </Button>
                     </div>
-                    <button className="button" onClick={clearCompletedList}>
+                    <Button onClick={clearCompletedList}>
                         Clear completed
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>

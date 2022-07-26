@@ -1,0 +1,20 @@
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    padding: 1em;
+    padding-left: 4.5em;
+    border-bottom: 1px solid lightgrey;
+}
+
+.input::placeholder {
+    font-style: italic;
+    color: lightgray;
+}
+
+.icon {
+    position: absolute;
+    color: lightgrey;
+    top: 0.75em;
+    left: 1.3em;
+}

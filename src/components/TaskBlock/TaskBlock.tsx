@@ -11,16 +11,15 @@ export const TaskBlock = ({
     ...props
 }: ITask): JSX.Element => {
     return (
-        <div className={style.block} {...props} role='taskBlock'>
+        <div className={style.block} {...props} data-testid="taskBlock">
             <input
                 type="checkbox"
                 className={style.checkbox}
                 checked={isDone}
                 onChange={() => toggle!(taskId)}
-                data-testId='input'
-                />
+                data-testId="input"
+            />
             <span
-                role='checker'
                 className={cn(style.text, {
                     [style.checked]: isDone,
                 })}
