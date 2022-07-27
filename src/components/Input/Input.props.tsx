@@ -7,5 +7,5 @@ export interface IInput
     > {
     handleSubmit: (event: ChangeEvent<HTMLFormElement>) => void;
     placeholder?: string;
-    // value: string;
+    value: string;
 }

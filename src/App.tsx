@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, useEffect, useState } from "react";
-import "./App.css";
+import style from "./App.module.css";
 import { Button, Input, TaskBlock } from "./components";
 import { ITask } from "./components/TaskBlock/TaskBlock.props";
 
@@ -84,9 +84,9 @@ const App: FC = (): JSX.Element => {
     });
 
     return (
-        <div className="App">
-            <h1 className="header">todos</h1>
-            <div className="todoList">
+        <div className={style.App}>
+            <h1 className={style.header}>todos</h1>
+            <div className={style.todoList}>
                 <Input
                     onChange={handleChange}
                     // handleOnChange={handleChange}
@@ -95,9 +95,9 @@ const App: FC = (): JSX.Element => {
                     value={task}
                 />
                 {todoListElements}
-                <div className="footer">
+                <div className={style.footer}>
                     <span>{`${todoList.length} items left`}</span>
-                    <div className="filterBlock">
+                    <div className={style.filterBlock}>
                         <Button onClick={() => filterTodoList("all")}>
                             All
                         </Button>
