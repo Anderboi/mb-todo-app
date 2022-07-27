@@ -6,6 +6,7 @@ export interface IInput
         HTMLInputElement
     > {
     handleSubmit: (event: ChangeEvent<HTMLFormElement>) => void;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     placeholder?: string;
-    value: string;
+    value?: string;
 }

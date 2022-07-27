@@ -6,22 +6,26 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 export const Input = ({
     handleSubmit,
+    onChange,
     placeholder,
     value,
     ...props
 }: IInput) => {
     return (
-        <form action="todo" onSubmit={handleSubmit} data-testid="form">
-            <FontAwesomeIcon icon={faAngleDown} className={style.icon} />
-            <input
-                type="text"
-                className={style.input}
-                placeholder={placeholder}
-                {...props}
-                value={value}
-                autoFocus
-                data-testid="input"
-            />
-        </form>
+        <>
+            <form action="todo" onSubmit={handleSubmit} data-testid="form">
+                <FontAwesomeIcon icon={faAngleDown} className={style.icon} />
+                <input
+                    type="text"
+                    className={style.input}
+                    placeholder={placeholder}
+                    {...props}
+                    value={value}
+                    autoFocus
+                    data-testid="input"
+                    onChange={onChange}
+                />
+            </form>
+        </>
     );
 };
