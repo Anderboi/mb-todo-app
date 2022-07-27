@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mb-todo-app/static/css/main.0a305461.css",
-    "main.js": "/mb-todo-app/static/js/main.fc381fdd.js",
+    "main.js": "/mb-todo-app/static/js/main.4d083d71.js",
     "static/js/787.2f3f44a9.chunk.js": "/mb-todo-app/static/js/787.2f3f44a9.chunk.js",
     "index.html": "/mb-todo-app/index.html",
     "main.0a305461.css.map": "/mb-todo-app/static/css/main.0a305461.css.map",
-    "main.fc381fdd.js.map": "/mb-todo-app/static/js/main.fc381fdd.js.map",
+    "main.4d083d71.js.map": "/mb-todo-app/static/js/main.4d083d71.js.map",
     "787.2f3f44a9.chunk.js.map": "/mb-todo-app/static/js/787.2f3f44a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0a305461.css",
-    "static/js/main.fc381fdd.js"
+    "static/js/main.4d083d71.js"
   ]
 }
