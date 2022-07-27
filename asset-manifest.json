@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mind-todo/static/css/main.132e0a40.css",
-    "main.js": "/mind-todo/static/js/main.9b9e63d4.js",
-    "static/js/787.2f3f44a9.chunk.js": "/mind-todo/static/js/787.2f3f44a9.chunk.js",
-    "index.html": "/mind-todo/index.html",
-    "main.132e0a40.css.map": "/mind-todo/static/css/main.132e0a40.css.map",
-    "main.9b9e63d4.js.map": "/mind-todo/static/js/main.9b9e63d4.js.map",
-    "787.2f3f44a9.chunk.js.map": "/mind-todo/static/js/787.2f3f44a9.chunk.js.map"
+    "main.css": "/mb-todo-app/static/css/main.132e0a40.css",
+    "main.js": "/mb-todo-app/static/js/main.fc381fdd.js",
+    "static/js/787.2f3f44a9.chunk.js": "/mb-todo-app/static/js/787.2f3f44a9.chunk.js",
+    "index.html": "/mb-todo-app/index.html",
+    "main.132e0a40.css.map": "/mb-todo-app/static/css/main.132e0a40.css.map",
+    "main.fc381fdd.js.map": "/mb-todo-app/static/js/main.fc381fdd.js.map",
+    "787.2f3f44a9.chunk.js.map": "/mb-todo-app/static/js/787.2f3f44a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.132e0a40.css",
-    "static/js/main.9b9e63d4.js"
+    "static/js/main.fc381fdd.js"
   ]
 }
